@@ -38,123 +38,141 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+What is the average dosage prescribed for each medication?
 
 ```sql
--- Paste your SQL code below for Question 1
+select medication,avg(dosage) as AvgDosage 
+from Prescriptions 
+group by medication;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="629" height="827" alt="image" src="https://github.com/user-attachments/assets/40c40750-4b29-4673-88ca-1a3a6653895a" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+How many prescriptions were written in each frequency category (e.g., once daily, twice daily)?
 
 ```sql
--- Paste your SQL code below for Question 2
+select frequency,count(PrescriptionID) as TotalPrescriptions
+from Prescriptions
+group by frequency;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="758" height="598" alt="image" src="https://github.com/user-attachments/assets/c7ca3265-b9f4-45da-b2ac-259a6619d661" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+How many medical records are there for each patient?
 
 ```sql
--- Paste your SQL code below for Question 3
+select PatientID,count(RecordID) as TotalRecords
+from MedicalRecords
+group by PatientID;
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="597" height="732" alt="image" src="https://github.com/user-attachments/assets/bfec625f-c690-47ef-b291-dbd83e192bec" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to return the total number of rows in the 'customer' table where the city is not Noida.
 
 ```sql
--- Paste your SQL code below for Question 4
+select count(*) as COUNT from customer
+where city != "Noida";
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="382" height="397" alt="image" src="https://github.com/user-attachments/assets/564562d1-cae9-451c-bea7-729f6d4d3da1" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to calculate total purchase amount of all orders. Return total purchase amount.
 
 ```sql
--- Paste your SQL code below for Question 5
+select sum(purch_amt) as TOTAL from orders;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="356" height="377" alt="image" src="https://github.com/user-attachments/assets/6758f8c0-f24f-4c63-b400-d9c76cbf8c93" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to Calculate the average income of the employees with names starting with 'A': 
 
 ```sql
--- Paste your SQL code below for Question 6
+select avg(income) as avg_income from employee
+where name like "A%";
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="368" height="377" alt="image" src="https://github.com/user-attachments/assets/5cc2ae59-ce63-48b5-956c-7bc5d741982e" />
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to calculate the average purchase amount of all orders. Return average purchase amount.
 
 ```sql
--- Paste your SQL code below for Question 7
+select avg(purch_amt) as AVERAGE from orders;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="352" height="380" alt="image" src="https://github.com/user-attachments/assets/c79eaaf7-4ef1-443e-93eb-dbc8433c7de5" />
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write the SQL query that achieves the grouping of data by city, calculates the average income for each city, and includes only those cities where the average income is greater than 500,000.
 
 ```sql
--- Paste your SQL code below for Question 8
+select city,AVG(income)
+from employee
+group by city
+having avg(income)>500000;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="607" height="508" alt="image" src="https://github.com/user-attachments/assets/b8daadd4-7657-4d02-821b-ab42c904a836" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write the SQL query that achieves the grouping of data by age, calculates the minimum income for each age group, and includes only those age groups where the minimum income is less than 400,000.
 
 ```sql
--- Paste your SQL code below for Question 9
+select age,MIN(income) from employee
+group by age
+having min(income)<400000;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="581" height="451" alt="image" src="https://github.com/user-attachments/assets/4bb149ea-e51f-4279-b059-f93f7d8ea466" />
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write the SQL query that accomplishes the selection of product which has lowest price in each category from the "products" table and includes only those products where the minimum price is less than 10.
 
 ```sql
--- Paste your SQL code below for Question 10
+select category_id,min(price) as Price from products
+group by category_id
+having min(price)<10;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="653" height="454" alt="image" src="https://github.com/user-attachments/assets/c52deba0-d093-4409-add0-8a776e8d3325" />
+
+
+<img width="1919" height="1151" alt="Screenshot 2025-11-18 102026" src="https://github.com/user-attachments/assets/d63c2306-b027-49f2-b740-cb36771ba5be" />
 
 
 ## RESULT
