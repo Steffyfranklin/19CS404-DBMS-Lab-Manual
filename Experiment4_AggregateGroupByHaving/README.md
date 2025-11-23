@@ -38,123 +38,147 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+How many patients are there in each city?
 
 ```sql
--- Paste your SQL code below for Question 1
+select Address , count(*) as TotalPatients
+from Patients
+group by Address
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="609" height="376" alt="image" src="https://github.com/user-attachments/assets/dcd3dfd2-ca06-47fc-bcb6-5b16ac5dfb8f" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+How many medical records are there for each patient?
 
 ```sql
--- Paste your SQL code below for Question 2
+select PatientID , count(*) as TotalRecords
+from MedicalRecords
+group by PatientID
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="589" height="634" alt="image" src="https://github.com/user-attachments/assets/509588e7-10b3-4c63-ba8c-0f08d3f887b3" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+How many doctors specialize in each medical specialty?
 
 ```sql
--- Paste your SQL code below for Question 3
+select Specialty,count(*) as TotalDocto
+from Doctors
+group by Specialty
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="653" height="641" alt="image" src="https://github.com/user-attachments/assets/1a26be51-dfd4-4c95-8d74-9b4bc2e4f7f5" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to find the shortest email address in the customer table?
 
 ```sql
--- Paste your SQL code below for Question 4
+select name,email,MIN(length(email)) as min_email_length
+from customer
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="990" height="296" alt="image" src="https://github.com/user-attachments/assets/9fe04746-0e79-4abe-9602-e3f9aefc780e" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to find the average length of email addresses (in characters):
 
 ```sql
--- Paste your SQL code below for Question 5
+select AVG(length(email)) as avg_email_length
+from customer
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="438" height="276" alt="image" src="https://github.com/user-attachments/assets/96317dc3-7bc6-4612-9308-d6b969f124ac" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to find the Fruit with the lowest available quantity.
+
+Note: Inventory attribute contains amount of fruits
 
 ```sql
--- Paste your SQL code below for Question 6
+select name as fruit_name,MIN(inventory) as lowest_quantity
+from fruits
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="638" height="291" alt="image" src="https://github.com/user-attachments/assets/62d6370a-0121-44cf-bfa1-258f140a8f3f" />
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to calculate the average purchase amount of all orders. Return average purchase amount.
 
 ```sql
--- Paste your SQL code below for Question 7
+select AVG(purch_amt) as AVERAGE
+from orders
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="331" height="286" alt="image" src="https://github.com/user-attachments/assets/d926f54e-6179-4c07-9477-29cbfb6bfc30" />
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write the SQL query that accomplishes the selection of total cost of all products in each category from the "products" table and includes only those products where the total cost is greater than 50.
 
 ```sql
--- Paste your SQL code below for Question 8
+select category_id,SUM(price) as Total_Cost
+from products
+group by Category_id
+having SUM(price)>50
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="536" height="317" alt="image" src="https://github.com/user-attachments/assets/13960c9d-cbbd-4ff2-9941-f00d2d11c8ef" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write the SQL query that achieves the grouping of data by occupation, calculates the average work hours for each occupation, and includes only those occupations where the average work hour falls between 10 and 12.
 
 ```sql
--- Paste your SQL code below for Question 9
+select occupation,AVG(workhour) 
+from employee1
+group by occupation
+having AVG(workhour) between 10 and 12
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="580" height="350" alt="image" src="https://github.com/user-attachments/assets/3e4465f6-a09b-4626-a42d-f8360681980f" />
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a SQL query to identify the cities (addresses) where the average salary is greater than Rs. 5000, as per the "customer1" table.
 
 ```sql
--- Paste your SQL code below for Question 10
+select address,AVG(salary)
+from customer1
+group by address
+having AVG(salary) > 5000
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="531" height="398" alt="image" src="https://github.com/user-attachments/assets/879c5d0a-0604-4ec6-aba8-f924cdd63ec1" />
+
+<img width="1920" height="1200" alt="Screenshot 2025-11-22 153017" src="https://github.com/user-attachments/assets/31d468fc-b06e-42f7-9017-a069cce17473" />
 
 
 ## RESULT
