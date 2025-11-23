@@ -47,123 +47,140 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL statement to Update the hire_date of employees in department 50 to 2024-01-24.
 
 ```sql
--- Paste your SQL code below for Question 1
+update Employees
+set hire_date = '2024-01-24'
+where department_id=50;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1174" height="222" alt="image" src="https://github.com/user-attachments/assets/06d1888a-c851-4f23-a84a-37713670ef81" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL query to Delete customers from 'customer' table where 'AGENT_CODE' is either 'A003' or 'A008'.
 
 ```sql
--- Paste your SQL code below for Question 2
+delete from customer
+where agent_code='A003' or agent_code='A008';
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="642" height="952" alt="image" src="https://github.com/user-attachments/assets/058681b8-6f07-4691-96a9-5dd35eadca69" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL query to delete a doctor from Doctors table whos specialization is 'Cardiology'
 
 ```sql
--- Paste your SQL code below for Question 3
+delete from Doctors 
+where specialization='Cardiology';
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1138" height="312" alt="image" src="https://github.com/user-attachments/assets/972880ed-9ad6-4216-92d8-ec2da39f3fcb" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to categorize value1 in the Calculations table as 'High' if it is greater than 50, otherwise 'Low'.
 
 ```sql
--- Paste your SQL code below for Question 4
+select id ,value1,
+  case 
+    when value1>50 then 'High'
+    else 'Low'
+  end as value_category
+from Calculations;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="748" height="256" alt="image" src="https://github.com/user-attachments/assets/44075ba2-d24a-4bef-80e3-a8904c279c85" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+write a SQL query to find details of all orders with a purchase amount less than 200 or exclude orders with an order date greater than or equal to '2012-02-10' and a customer ID less than 3009. Return ord_no, purch_amt, ord_date, customer_id and salesman_id.
 
 ```sql
--- Paste your SQL code below for Question 5
+select * from orders
+where purch_amt<200 or not (ord_date >='2012-02-10' and customer_id<3009);
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1107" height="389" alt="image" src="https://github.com/user-attachments/assets/0fe3bbbc-e4a3-4a3e-8374-045305716307" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to find all orders that meet the following conditions. Exclude combinations of order date equal to '2012-08-17' or customer ID greater than 3005 and purchase amount less than 1000.
 
 ```sql
--- Paste your SQL code below for Question 6
+select * from orders
+where not(ord_date='2012-08-17' or customer_id > 3005 and purch_amt <1000);
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1118" height="696" alt="image" src="https://github.com/user-attachments/assets/38356cd7-7e33-49b4-88e7-9735c640d1c3" />
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a report that shows the capitalized FirstName and capitalized LastName renamed as FirstName and Lastname respectively and EmployeeId from the employees table sorted by EmployeeId in descending order.
 
 ```sql
--- Paste your SQL code below for Question 7
+select UPPER(FirstName) as FirstName,UPPER(LastName) as LastName,EmployeeID from employees
+order by EmployeeID desc
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="769" height="557" alt="image" src="https://github.com/user-attachments/assets/dd90afc4-c236-48e5-908c-5064ea444772" />
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write a SQL query to identify products where the discount amount is greater than $50. Return product_id, original_price, discount_percentage, and discount_amount.
 
 ```sql
--- Paste your SQL code below for Question 8
+select * ,(original_price*discount_percentage) as discount_amount from products
+where discount_amount > 50;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1169" height="201" alt="image" src="https://github.com/user-attachments/assets/ec36499f-ddba-4f99-97b4-4eec4847c029" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write a SQL query to find all employees who were hired on a weekend (Saturday or Sunday) from the emp table
 
 ```sql
--- Paste your SQL code below for Question 9
+select ename,hiredate,
+strftime("%w",hiredate) as day_of_week from emp
+where strftime("%w",hiredate) in("0","6")
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="799" height="254" alt="image" src="https://github.com/user-attachments/assets/04ff46df-7529-4c24-882a-50b02f12de46" />
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a SQL query to display hire dates in the format "DD-MM-YYYY" from the emp table
 
 ```sql
--- Paste your SQL code below for Question 10
+select ename,strftime('%d-%m-%Y',hiredate) as HireDateFormatted from emp;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="666" height="348" alt="image" src="https://github.com/user-attachments/assets/3429efed-a429-4c29-a415-ec3586daf81c" />
+
+<img width="1919" height="1198" alt="Screenshot 2025-11-22 153002" src="https://github.com/user-attachments/assets/f592c2a0-a53a-4893-a299-c020ad7687ed" />
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
